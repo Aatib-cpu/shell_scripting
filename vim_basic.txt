@@ -1,0 +1,80 @@
+VIM TUTORIAL
+
+#Modes
+"i" insert mode before the cursor
+"a" insert mode after the cursor
+"o" insert mode in to new line below the current line  
+"A" insert mode in end of line 
+"I" insert mode in start of line
+"O" insert mode in to new line above the current line
+"v" visual mode
+":" eommand mode
+
+#Vim Motion (first number then press key to occur number of times for ex: 5k means 5 times up)
+"h" move left, "j" move down, "k" move up, "l" move right (for command mode only u can also use arrow key which works in both mode)
+
+#Normal mode key binding
+"u" for undo ("3u" for 3 undos)
+"D" will delete the words to the left of the cursor
+"dd" to delete a line (3dd to delete 3 lines)
+"d0" will delete toward left of the cursor completely and "d$" will delete towards right of the cursor towards end
+"ctrl+r" for redo
+"diw" to delete the word under the cursor
+"di"" to delete inner quatotation mark
+"di(" to delete inner of "()"
+"yy" to copy a line (2yy will copy 2 line) and "p" to paste it below the current cursor line and "P" to paste it above the current cursor line
+"yiw" to copy a word
+"yi"" to copy inner quatation mark
+"cc" will delete the line and move to insert mode (basically change a line)
+"c" delete a charachter and go to insert mode 
+"r" replace a letter, "x" delete a charachter
+"w" jumps to next word first letter, "b" jump to first letter of word in backword, "e" moves of end letter of word in forward
+"ciw" remove a word an move to insert mode
+"ci"" will delete inner of quation mark an move to insert mode
+"ci(" to delete the inner of "()" and move to insert mode
+"0" zero move cursor to begining of line
+"$" moves cursor to end of the line
+"%" pressing this on opening bracket will move cursor to its corespongind closing bracket
+"d%" delete everything inside bracket and including bracket
+"t*" or "f*" will move cursor to next "*" symbol where as "T*" or "F*" will move backword occuring * 
+"dt(" delete everything from the cursor point to the opening bracket
+"yt(" copy till openning bracket
+"yp" copy a pragraph
+"gg" start of the page and "G" end of the page
+"12+G" move cursor to 12th line number
+">>" or "<<" indent complete line towards right or left
+"==" will auto-indent line to proper order
+press "gg" then "=" then "G" to auto-indent the whole file
+press "*" or "#" to select the next or previous occurance of that word or term 
+press "mg" or "ma" to mark a line then press "'g" or "'a" to go to that line
+"zz" to make that line come to middle of desktop
+"." to repeat the previous command (for example: everytime we press "." after "dt(" will delete till "(")
+
+#Insert mode key binding
+"ctrl+w" delete a left word
+"ctrl+u" delete all words on left of cursor in a line
+"ctrl+m" go to next line from the point of cursor
+"ctrl+n" and "ctrl+p" to get suggestion for next and previous word
+"ctrl+a" will delete character towards left (just like delete in windows)
+
+#Visual mode key binding
+press "v" then select word using arrows or vim motion then press "d" to delete, "y" to copy and paste it using "p" or "P"
+press "ctrl+v" to select in column wise and then we can copy or delete things
+press "v" then select lines then press "=" to indent the selected lines in correct format
+press "v" then select lines then press ":" it will show ":'<,>'" then type "s/will/lliw/g" then it will replace all "will" with "lliw" (actual command: :'<,>'s/will/lliw/g )
+
+#Miscellaneous
+":set number" and ":set nonumber" to set and unset number
+":set relativenumber" and ":set norelativenumber" to set and unset relative number
+":set mouse=a" to activate mouse in vim
+":set tabstop=4" makes tab key as 4 spaces (default is 8 spaces)
+":colorscheme <tab>" to select different theme 
+":set autoindent" makes the next line cursor aligned with current line
+":set smartindent" increase indent after curly braces ({ or })
+":set cindent" increase indent like c/c++/verilog
+":45" move cursor to line number 45
+"/mode" will search all occurance of "mode" then press "n" and "N" to select next or previous occurance (u can replace "mode" with any character)
+":s/will/lliw/g" will replace all "will" with "lliw"
+":reg" will show the content of the register the type "'7p" will paste the 7th register content (we can also do "'7yy" to set copy line to 7th register)
+"'0p" will paste the last yanked thing even if d or delete is used. (pressing "p" after "d" or "dd" will paste the last deleted line, so "'0p" will paste the last copied thing)
+":m +3" or ":m -3" or ":m 3" to move the current line to 3 lines up or 3 lines down or to line number 3
